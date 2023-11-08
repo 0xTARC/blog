@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Save time, money, and effort while boosting your Web3 development knowledge.</title>
-    <link rel="stylesheet" href="../assets/built/screen.css%3Fv=da8b69c608.css">
+    <link rel="stylesheet" href="../assets/built/screen.css%3Fv=6fa5243f2e.css">
 
     <link rel="canonical" href="index.html">
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -133,9 +133,9 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="415317072a5eaf355fa7755fcd" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://young-sky-3517.on.fleek.co/" crossorigin="anonymous"></script>
     
     <link href="https://young-sky-3517.on.fleek.co/webmentions/receive/" rel="webmention">
-    <script defer src="../public/cards.min.js%3Fv=da8b69c608"></script>
-    <link rel="stylesheet" type="text/css" href="../public/cards.min.css%3Fv=da8b69c608.css">
-    <script defer src="../public/member-attribution.min.js%3Fv=da8b69c608"></script><style>:root {--ghost-accent-color: #00AAAA;}</style>
+    <script defer src="../public/cards.min.js%3Fv=6fa5243f2e"></script>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css%3Fv=6fa5243f2e.css">
+    <script defer src="../public/member-attribution.min.js%3Fv=6fa5243f2e"></script><style>:root {--ghost-accent-color: #00AAAA;}</style>
 </head>
 
 <body class="page-template page-about is-head-stacked">
@@ -255,9 +255,88 @@
         </div>
     </div>
 </div>
-<script src="../assets/built/main.min.js%3Fv=da8b69c608"></script>
+<script src="../assets/built/main.min.js%3Fv=6fa5243f2e"></script>
+
+<script>
+
+var elements = document.getElementsByClassName("gh-signup");
+// Loop through the elements and hide them
+for (var i = 0; i < elements.length; i++) {
+  elements[i].style.display = "none";
+}
+
+var elements = document.getElementsByClassName("gh-subscribe");
+// Loop through the elements and hide them
+for (var i = 0; i < elements.length; i++) {
+  elements[i].style.display = "none";
+}
 
 
+// Find the element with both classes "nav-sign-up" and "nav-current"
+var element = document.querySelector(".nav-sign-up.nav-current");
+
+if (element) {
+  element.style.display = "none";
+}
+
+
+var elements = document.getElementsByClassName("gh-head-actions");
+if (elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.display = "none";
+  }
+}
+
+  
+// Find all anchor elements with the specified class and href
+var elementsToRemove = document.querySelectorAll('a.kg-btn.kg-btn-accent[href="#/portal/signup"]');
+
+// Loop through the elements and remove them
+elementsToRemove.forEach(function(element) {
+  element.parentNode.removeChild(element);
+});
+
+// Find all anchor elements with the specified class and href
+var elementsToRemove = document.querySelectorAll('a[href="#/portal/"]');
+
+// Loop through the elements and remove them
+elementsToRemove.forEach(function(element) {
+  element.parentNode.removeChild(element);
+});
+
+
+  
+// // remove portals
+// var element = document.querySelector(".ghost-portal-root");
+
+// if (element) {
+//   element.style.display = "none";
+// }
+
+//////////
+  // make sure subscribe button never shows up
+// Create a new <style> element
+var styleElement = document.createElement('style');
+styleElement.type = 'text/css';
+
+// Define the CSS rule to hide the element
+var cssCode = '#ghost-portal-root { display: none; }';
+
+if (styleElement.styleSheet) {
+  // For Internet Explorer
+  styleElement.styleSheet.cssText = cssCode;
+} else {
+  // For other browsers
+  styleElement.appendChild(document.createTextNode(cssCode));
+}
+
+// Append the <style> element to the <head>
+document.head.appendChild(styleElement);
+
+  ////////////
+
+  
+</script>
 
 </body>
 
