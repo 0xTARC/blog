@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=8cda9b7575">
+
+    <meta name="description" content="The best, easiest, way to interact with smart contracts from TypeScript / JavaScript.">
+    <link rel="canonical" href="http://localhost:2368/the-ultimate-guide-to-stress-free/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="0xTARC&#x27;s Web3 DevBlog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers">
+    <meta property="og:description" content="The best, easiest, way to interact with smart contracts from TypeScript / JavaScript.">
+    <meta property="og:url" content="http://localhost:2368/the-ultimate-guide-to-stress-free/">
+    <meta property="og:image" content="http://localhost:2368/content/images/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg">
+    <meta property="article:published_time" content="2023-01-15T01:58:06.000Z">
+    <meta property="article:modified_time" content="2023-01-15T01:58:06.000Z">
+    <meta property="article:tag" content="Newsletter">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers">
+    <meta name="twitter:description" content="The best, easiest, way to interact with smart contracts from TypeScript / JavaScript.">
+    <meta name="twitter:url" content="http://localhost:2368/the-ultimate-guide-to-stress-free/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https-3a-2f-2f0xtarc.substack.com-2fapi-2fv1-2fpost_preview-2f96770828-2ftwitter.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="0xTARC">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Newsletter">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="468">
+    <meta property="og:image:height" content="600">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "0xTARC&#x27;s Web3 DevBlog",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2023/11/tarc-milady-2.jpeg",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "0xTARC",
+        "url": "http://localhost:2368/author/0xtarc-2/",
+        "sameAs": []
+    },
+    "headline": "The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers",
+    "url": "http://localhost:2368/the-ultimate-guide-to-stress-free/",
+    "datePublished": "2023-01-15T01:58:06.000Z",
+    "dateModified": "2023-01-15T01:58:06.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg",
+        "width": 468,
+        "height": 600
+    },
+    "keywords": "Newsletter",
+    "description": "The best, easiest, way to interact with smart contracts from TypeScript / JavaScript.",
+    "mainEntityOfPage": "http://localhost:2368/the-ultimate-guide-to-stress-free/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.72">
+    <link rel="alternate" type="application/rss+xml" title="0xTARC&#x27;s Web3 DevBlog" href="http://localhost:2368/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false" data-ghost="http://localhost:2368/" data-key="415317072a5eaf355fa7755fcd" data-api="http://localhost:2368/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="415317072a5eaf355fa7755fcd" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="http://localhost:2368/" crossorigin="anonymous"></script>
+    
+    <link href="http://localhost:2368/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=8cda9b7575"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=8cda9b7575">
+    <script defer src="/public/member-attribution.min.js?v=8cda9b7575"></script><style>:root {--ghost-accent-color: #00AAAA;}</style>
+</head>
+
+<body class="post-template tag-newsletter tag-hash-substack tag-hash-substack-type-newsletter tag-hash-substack-access-everyone tag-hash-import-2023-11-08-02-56 is-head-stacked">
+<div class="gh-site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="http://localhost:2368">
+                            <img src="http://localhost:2368/content/images/2023/11/tarc-milady-2.jpeg" alt="0xTARC&#x27;s Web3 DevBlog">
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="http://localhost:2368/">Home</a></li>
+    <li class="nav-about"><a href="http://localhost:2368/about/">About</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                    <div class="gh-head-members">
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.33332 3.33334H16.6667C17.5833 3.33334 18.3333 4.08334 18.3333 5.00001V15C18.3333 15.9167 17.5833 16.6667 16.6667 16.6667H3.33332C2.41666 16.6667 1.66666 15.9167 1.66666 15V5.00001C1.66666 4.08334 2.41666 3.33334 3.33332 3.33334Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.3333 5L9.99999 10.8333L1.66666 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> Subscribe</a>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+<main id="gh-main" class="gh-main">
+    <article class="gh-article post tag-newsletter tag-hash-substack tag-hash-substack-type-newsletter tag-hash-substack-access-everyone tag-hash-import-2023-11-08-02-56">
+
+        <header class="gh-article-header gh-canvas">
+            <span class="gh-article-meta">
+                By <a href="/author/0xtarc-2/">0xTARC</a>
+                    in
+                    <a class="gh-article-tag" href="http://localhost:2368/tag/newsletter/">Newsletter</a>
+                —
+                <time datetime="2023-01-15">Jan 15, 2023</time>
+            </span>
+
+            <h1 class="gh-article-title">The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers</h1>
+
+                <p class="gh-article-excerpt">The best, easiest, way to interact with smart contracts from TypeScript / JavaScript.</p>
+
+                <figure class="gh-article-image">
+        <img
+            srcset="/content/images/size/w300/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg 300w,
+                    /content/images/size/w720/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg 720w,
+                    /content/images/size/w960/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg 960w,
+                    /content/images/size/w1200/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg 1200w,
+                    /content/images/size/w2000/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg 2000w"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            src="/content/images/size/w1200/image/fetch/w_2000,h_2000,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg"
+            alt="The Ultimate Guide to Stress-Free, Multichain Smart Contract Calls in TypeScript: How to Build an SDK with TypeChain and Ethers"
+        >
+    </figure>
+        </header>
+
+        <div class="gh-content gh-canvas">
+            <h2 id="the-pain-of-calling-smart-contracts-from-the-frontend">The Pain of Calling Smart Contracts from the Frontend</h2><p>Smart Contracts can be <em>real</em> hard to interact with, especially from JavaScript / TypeScript.</p><p>Have you ever been confused about what address a contract lives at?</p><div class="kg-card kg-button-card kg-align-center"><a href="#/portal/signup" class="kg-btn kg-btn-accent">Subscribe</a></div><p>Used an out of date ABI?</p><p>Wondered wtf Solidity’s <code>bytes32</code> should be in TypeScript?</p><p>Got confused context switching between Solidity and TypeScript to make sure you’re calling a function correctly?</p><p>Me too, anon.</p><p>What if we could have ONE place that keeps track of all of our addresses, ABIs, AND ALSO makes interacting with our contracts 10x easier? We can with TypeChain! Let’s see how in 5 simple(ish) steps.</p><h2 id="using-typechain-and-ethers-to-make-calling-our-contracts-10x-easier">Using TypeChain and Ethers to Make Calling our Contracts 10x Easier</h2><figure class="kg-card kg-image-card"><img src="http://localhost:2368/content/images/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f2e25aa5a-bb8a-4a56-9f7b-2adeb5e770c9_468x600.jpg" class="kg-image" alt loading="lazy"></figure><p>We can make our lives WAY easier in 5 simple steps:</p><ol><li>Make sure our smart contract repo has committed up-to-date ABIs</li><li>Create a New TypeScript Project for the SDK</li><li>Add Up-to-Date Addresses to the SDK</li><li>Generate TypeScript code from our ABIs using TypeChain</li><li>Use the SDK in your dApp frontend!</li></ol><p>If you’d like to follow along, the smart contract repo I’ll be using for this example is <a href="https://github.com/PatrickAlphaC/hardhat-smartcontract-lottery-fcc?ref=localhost">hardhat-smartcontract-lottery-fcc</a> from Patrick Collins’ excellent, free Full-Stack Web3 Development course.</p><h4 id="step-1-make-sure-smart-contract-repository-has-up-to-date-abis"><strong>Step 1:</strong> <strong>Make sure Smart Contract Repository Has Up-to-Date ABIs</strong></h4><p>Check your smart contract repo for committed ABIs. In a default Hardhat project, it’s the <code>artifacts/</code> directory. With Foundry, the <code>out/</code> directory. Do some searching, and hopefully you’ll find those <code>.json</code> files somewhere.</p><p>If the ABIs aren’t there, compile the contracts yourself and commit the ABIs. Or ask your smart contract devs to do it (with an uwu and pwetty pwease on top).</p><p>For the <code>hardhat-smartcontract-lottery-fcc</code> repo, I did the following:</p><ol><li>Forked it</li><li>Opened <code>.gitignore</code> and removed <code>artifacts/</code></li><li>Ran <code>npx hardhat compile</code> to generate ABIs in the <code>/artifacts</code> directory</li><li>And committed all the artifacts to my fork.</li></ol><blockquote>It’s <em>very</em> important to have up to date ABIs committed. Ideally this process happens in CI so it’s harder for them to go missing or get out of date.</blockquote><h4 id="step-2-create-a-new-typescript-project-for-the-sdk"><strong>Step 2: Create a New TypeScript Project for the SDK</strong></h4><p>Now that we have our ABIs tidied up and TypeChain installed, we’re done with the smart contracts. Now we just need a basic TypeScript repo. Something like <a href="https://github.com/0xTARC/example-sdk/tree/12c6407?ref=localhost">this</a> will do the trick. I recommend using that as a reference.</p><h4 id="step-3-add-up-to-date-addresses-to-the-sdk">Step 3: Add Up-to-Date Addresses to the SDK</h4><p>Check the docs or ask your smart contract devs where to find the addresses for the latest deployed contracts.</p><p>We’re going to put these in our SDK in a new file: <code>src/addresses.ts</code>.</p><p>Using Raffle.sol as an example:</p><pre><code>export const Addresses: Record&lt;number, any&gt; = {
+  31337: {
+    Raffle: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+  },
+  5: {
+    Raffle: '0xBCAd87730Fa664ee16b6a599A3a5A94C020e1255',
+  },
+}
+</code></pre><p>So it maps the chain ID → Contract Name → Address.</p><p>Here I show two chains: <code>31337</code> is chain ID of the Hardhat network for local development, and <code>5</code> is Goerli, ‘cause I’m too poor for Mainnet. Hopefully it’s obvious how this can expand to support any number of EVM-ish chains.</p><blockquote>If we were really fancy, we’d use a continuous integration process to update the ABIs, deploy the contracts, save deployed addresses, and PR them to this repo on every push to main. But that’s a whole other post.</blockquote><h4 id="step-4-generate-typescript-code-from-our-abis-using-typechain">Step 4: Generate TypeScript code from our ABIs using TypeChain</h4><p>“<em>Wooow</em> Tarc, you taught us how to commit files - <em>groundbreaking</em>. And you know what ‘CI’ means… cute. What about all that ‘making smart contract interactions easy’ stuff? I’m outta here...”</p><figure class="kg-card kg-image-card"><img src="http://localhost:2368/content/images/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2fce73026d-59ad-41d6-a90a-24b90cb91e3b_501x498.jpg" class="kg-image" alt loading="lazy"></figure><p>Enter TypeChain.</p><p>It’s easy to use:</p><ol><li>Pull your smart contract repo into your SDK repo.</li><li>Write some scripts to generate bindings from the committed ABIs with TypeChain.</li></ol><p>Let’s go! We’re 80% there!</p><p>In your SDK repo, install your smart contract repo as a package with:</p><pre><code>npm i git@github.com:0xTARC/hardhat-smartcontract-lottery-fcc.git#bb8b04d</code></pre><p><strong>IMPORTANT</strong>: <code>#bb8b04d</code> is the latest commit hash of the smart contract repo. You want to make sure to include this when using git dependencies to avoid accidentally introducing breaking changes in your SDK.</p><p>When you’re ready for a new SDK version, you’ll re-install your smart contract repo with a new commit hash, bump the version in <code>package.json</code>, and re-release.</p><p>Now, we need to add some scripts to run <code>typechain</code> and generate code for us. Open the <code>package.json</code> of the SDK repo, go to the <code>scripts</code> section, and make it look something like this:</p><pre><code>"scripts": {
+  "build": "rm -rf ./dist &amp;&amp; tsc",
+  "gen-hardhat-smartcontract-lottery-bindings": "find ./node_modules/hardhat-smartcontract-lottery/artifacts -name '*.json' ! -name '*dbg.json' ! -path './node_modules/hardhat-smartcontract-lottery/artifacts/build-info/*' | xargs npx typechain --target ethers-v5 --out-dir src/types",
+  "prebuild": "npm run gen-hardhat-smartcontract-lottery-bindings"
+},</code></pre><p>Finally, run <code>npm run build</code>. This will run the <code>prebuild</code> script, which runs the <code>gen-hardhat-smartcontract-lottery-bindings</code> script, which uses scary shell commands to run <code>typechain</code> on our committed ABIs from step 1.</p><p>That’s it! Your shiny new SDK is sitting in the <code>/dist</code> folder. You can use <code>npm link</code> to test locally or <code>npm publish</code> to test in prod (shoutouts Andre 🙏).</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="http://localhost:2368/content/images/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https-3a-2f-2fsubstack-post-media.s3.amazonaws.com-2fpublic-2fimages-2f40924dc9-a40b-4985-bf52-6956bb5b12c2_1512x420.jpg" class="kg-image" alt loading="lazy"><figcaption>Never doubt the creative forces of an autist at a shell - here’s how you can generate TypeChain bindings from a Hardhat Git repo imported as an npm dependency</figcaption></figure><blockquote>If you have a complex system of smart contracts living in multiple repos, install those repos as NPM dependencies too, add additional <code>scripts</code> to your <code>package.json</code> (e.g. <code>"gen-foo-bindings": "&lt;typechain command&gt;"</code>) and make sure to add those new scripts them in your <code>prebuild</code> script (e.g. <code>"npm run gen-hardhat-smartcontract-lottery-bindings &amp;&amp; npm run gen-foo-bindings”</code>).</blockquote><blockquote>You might wonder why installing a smart contract repo as an npm package is even possible, and if it would ever break. It’s admittedly a hack, and not future proof, but I it would work for 90% of cases. This is because our smart contract repo has a <code>package.json</code>, pretty much the only requirement for a Node package. This will obviously work for every Hardhat project because Hardhat is just a Node package. BUT it also works with most other projects due to the common practice of using Node packages to lint and format Solidity. For example, <a href="https://github.com/PaulRBerg/foundry-template?ref=localhost">PRB’s Foundry template</a>, and <a href="https://github.com/transmissions11/solmate?ref=localhost">Transmissions11’s solmate</a>. So If your smart contract repo <em>doesn’t</em> have a <code>package.json</code> and you’re against adding one, you can’t follow the rest of this tutorial word-for-word, but the principles are the same (use <code>curl</code> to download your repo instead, modify type generation command, etc). Anyways, let’s move on assuming you <em>can</em> <code>npm install</code> your smart contract repo.</blockquote><h4 id="step-5-using-the-sdk">Step 5: Using the SDK</h4><p>I put together a small example repo to show how you would use this SDK’s TypeChain bindings if you were to writing some TypeScript to interact with the <code>Raffle</code> contract.</p><p>Here’s some excerpts, with some links to the full code:</p><ul><li>Instantiating the Contract (assuming you have a valid <code>signer</code> and/or <code>provider</code>):</li></ul><pre><code>import { Addresses, Raffle__factory } from '@0xtarc/example-sdk';
+const RaffleAddress = Addresses[chainId].Raffle;
+const Raffle = Raffle__factory.connect(RaffleAddress, signer ?? provider);</code></pre><ul><li>Calling <code>getEntranceFee</code> (Performing a read call):</li></ul><pre><code>const entranceFee = await Raffle.getEntranceFee();</code></pre><p><a href="https://github.com/0xTARC/smartcontract-lottery-frontend-using-example-sdk/blob/0f575d185b990791dbe197efa5b3166cd90d80b7/src/App.tsx?ref=localhost#L9-L25">GitHub Link</a></p><ul><li>Calling <code>enterRaffle</code> (Performing a write call):</li></ul><pre><code>const enterRaffle = () =&gt; {
+    Raffle.enterRaffle({
+      value: entranceFee,
+    });
+  };</code></pre><p><a href="https://github.com/0xTARC/smartcontract-lottery-frontend-using-example-sdk/blob/0f575d185b990791dbe197efa5b3166cd90d80b7/src/App.tsx?ref=localhost#L27-L31">GitHub Link</a></p><ul><li>Listening for <code>RaffleEnter</code> events and logging new entrant addresses:</li></ul><pre><code>const RaffleEnter = () =&gt; {
+    Raffle.on(Raffle.filters.RaffleEnter(), (entrant) =&gt; {
+      console.log('New entrant: ', entrant);
+    });
+  };</code></pre><p><a href="https://github.com/0xTARC/smartcontract-lottery-frontend-using-example-sdk/blob/0f575d185b990791dbe197efa5b3166cd90d80b7/src/App.tsx?ref=localhost#L33-L37">GitHub Link</a></p><p>You can see the full repo <a href="https://github.com/0xTARC/smartcontract-lottery-frontend-using-example-sdk?ref=localhost">here</a>. <code>App.tsx</code> is probably the file you want. Play around and see how good the autocomplete is!</p><blockquote>This repo is based off the Rainbowkit example app <code>with-vite</code>, the best way to start a new dApp. That’s another post too - stay tuned.</blockquote><h3 id="fin">FIN</h3><p>Hopefully you learned how to create a robust, flexible, envy-inducing SDK with TypeChain and Ethers! TypeChain is awesome and the more you work with it, the more you’ll like it.</p><p>Thanks for reading! Please subscribe to keep leveling up your Web3.0 crypto blockchain frontend skillz!</p><div class="kg-card kg-button-card kg-align-center"><a href="#/portal/signup" class="kg-btn kg-btn-accent">Subscribe now</a></div><p>Peace ✌️</p><p>- 0xTARC</p><h3 id="more-resources">More Resources</h3><p>Patrick Collins’ FREE “Full Stack Web3 Development” course doesn’t need more shills, but I’ll shill it anyway. It’s awesome for going from Blockchain Basics → Jr. Full-Stack Web3 dev. Here’s the Smart Contract Lottery portion:</p><figure class="kg-card kg-embed-card"><iframe src="https://www.youtube-nocookie.com/embed/gyMwXuJrbJQ?start=49263&amp;rel=0&amp;autoplay=0&amp;showinfo=0&amp;enablejsapi=0" frameborder="0" loading="lazy" gesture="media" allow="autoplay; fullscreen" allowautoplay="true" allowfullscreen="true" width="728" height="409"></iframe></figure><div class="kg-card kg-button-card kg-align-center"><a href="#/portal/signup" class="kg-btn kg-btn-accent">Subscribe</a></div>
+        </div>
+
+
+        <footer class="gh-article-footer gh-canvas">
+            <nav class="gh-navigation">
+                <div class="gh-navigation-previous">
+                        <a class="gh-navigation-link" href="/steal-my-code-and-save-time-a-step/">
+                            <span class="gh-navigation-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"></line>
+    <polyline points="12 19 5 12 12 5"></polyline>
+</svg> Previous issue</span>
+                            <h4 class="gh-navigation-title">Steal my Code &amp; Save Time: A Step-by-Step Guide to Building a Buttery Smooth, Composable, Health Factor Slider</h4>
+                        </a>
+                </div>
+
+                <div class="gh-navigation-middle"></div>
+
+                <div class="gh-navigation-next">
+                        <a class="gh-navigation-link" href="/crypto-ux-sucks-wallet-edition/">
+                            <span class="gh-navigation-label">Next issue <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+    <polyline points="12 5 19 12 12 19"></polyline>
+</svg></span>
+                            <h4 class="gh-navigation-title">Crypto UX Sucks: Wallet Edition</h4>
+                        </a>
+                </div>
+            </nav>
+        </footer>
+
+    </article>
+</main>
+
+
+
+        <div class="gh-subscribe">
+            <div class="gh-outer">
+                <section class="gh-subscribe-inner">
+                    <h3 class="gh-subscribe-title">Subscribe to 0xTARC&#x27;s Web3 DevBlog</h3>
+                    <div class="gh-subscribe-description">Don’t miss out on the latest issues. Sign up now to get access to the library of members-only issues.</div>
+                    <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
+                        <div class="gh-subscribe-input-text">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.33332 3.33334H16.6667C17.5833 3.33334 18.3333 4.08334 18.3333 5.00001V15C18.3333 15.9167 17.5833 16.6667 16.6667 16.6667H3.33332C2.41666 16.6667 1.66666 15.9167 1.66666 15V5.00001C1.66666 4.08334 2.41666 3.33334 3.33332 3.33334Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.3333 5L9.99999 10.8333L1.66666 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                            jamie@example.com
+                        </div>
+                        <div class="gh-subscribe-input-btn">Subscribe</div>
+                    </a>
+                </section>
+            </div>
+        </div>
+
+    <footer class="gh-foot gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                0xTARC&#x27;s Web3 DevBlog © 2023
+            </div>
+                <nav class="gh-foot-menu">
+                    <ul class="nav">
+    <li class="nav-sign-up"><a href="#/portal/">Sign up</a></li>
+</ul>
+
+                </nav>
+            <div class="gh-powered-by">
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/built/main.min.js?v=8cda9b7575"></script>
+
+
+
+</body>
+
+</html>
